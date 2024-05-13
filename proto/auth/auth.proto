@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/k3k13a1/protos/auth;authv1";
+
+service AuthService {
+    rpc AddPhone(AddPhoneRequest) returns (AddPhoneResponse);
+    rpc EditPhone(EditPhoneRequest) returns (EditPhoneResponse);
+    rpc AddEmail(AddEmailRequest) returns (AddEmailResponse);
+    rpc EditEmail(EditEmailRequest) returns (EditEmailResponse);
+}
+
+message AddPhoneRequest {
+    int32 id = 1;
+    string phone = 2;
+}
+
+message AddPhoneResponse {
+    int32 id = 1;
+    string phone = 2;
+    bool ok = 3;
+}
+
+message EditPhoneRequest {
+    int32 id = 1;
+    string phone = 2;
+}
+
+message EditPhoneResponse {
+    int32 id = 1;
+    string phone = 2;
+    bool ok = 3;
+}
+
+message AddEmailRequest {
+    int32 id = 1;
+    string email = 2;
+}
+
+message AddEmailResponse {
+    int32 id = 1;
+    string email = 2;
+    bool ok = 3;
+}
+
+message EditEmailRequest {
+    int32 id = 1;
+    string email = 2;
+}
+
+message EditEmailResponse {
+    int32 id = 1;
+    string email = 2;
+    bool ok = 3;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package users;
+
+option go_package = "github.com/k3k13a1/protos/users;usersv1";
+
+service UsersService {
+    rpc CreateUserWithPhone(CreateUserWithPhoneRequest) returns (CreateUserWithPhoneResponse);
+    rpc CreateUserWithEmail(CreateUserWithEmailRequest) returns (CreateUserWithEmailResponse);
+}
+
+message CreateUserWithPhoneRequest {
+    int64 id = 1;
+    string phone = 2;
+}
+
+message CreateUserWithPhoneResponse {
+    int64 id = 1;
+    string phone = 2;
+    bool ok = 3;
+}
+
+message CreateUserWithEmailRequest {
+    int64 id = 1;
+    string email = 2;
+}
+
+message CreateUserWithEmailResponse {
+    int64 id = 1;
+    string email = 2;
+    bool ok = 3;
+}
